@@ -7793,8 +7793,61 @@ a.anchor-link {
     white-space: normal;
   }
 </style>
-<!-- End of mermaid configuration --></head>
+<!-- End of mermaid configuration -->
+<style id="report-navigation-styles">
+/* Visually separate the main stages within each analysis. */
+.jp-RenderedHTMLCommon h3.report-section-divider {
+  border-top: 1px solid #cbd9df;
+  padding-top: 28px;
+  margin-top: 36px;
+  margin-bottom: 18px;
+  color: #23395d;
+}
+@media (max-width: 700px) {
+  .jp-RenderedHTMLCommon h3.report-section-divider {
+    padding-top: 22px;
+    margin-top: 28px;
+  }
+}
+
+:root { --report-nav-height: 76px; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--report-nav-height) + 20px); }
+body.jp-Notebook { padding-top: 0; }
+.report-nav { position: sticky; top: 0; z-index: 1000; margin: 0 -24px 24px; padding: 12px 24px; background: #fff; border-bottom: 1px solid #dce5eb; box-shadow: 0 3px 16px rgba(35,57,93,.06); font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+.report-nav-inner { max-width: 1400px; margin: auto; display: flex; flex-wrap: nowrap; align-items: center; gap: 18px; }
+.report-nav-brand { color: #23395d !important; text-decoration: none !important; flex-shrink: 0; font-weight: 800; font-size: 17px; letter-spacing: -.3px; line-height: 1.2; }
+.report-nav-brand span { display: block; margin-top: 4px; color: #627583; font-size: 9px; font-weight: 600; letter-spacing: 1.5px; }
+.report-nav-links { display: flex; flex: 1 1 0; align-items: center; gap: 3px; overflow-x: auto; min-width: 0; padding: 4px 0; scrollbar-width: thin; }
+.report-nav-links a { flex-shrink: 0; padding: 9px 10px; border-radius: 7px; color: #405365 !important; font-size: 12px; line-height: 1.3; font-weight: 600; text-decoration: none !important; white-space: nowrap; transition: background .15s,color .15s; }
+.report-nav-links a:hover { background: #f0f5f6; color: #23395d !important; }
+.report-nav-links a[aria-current="location"] { background: #e7f2f0; color: #215c57 !important; }
+.report-nav .report-nav-repo { margin-left: auto; flex-shrink: 0; padding: 9px 13px; border: 1px solid #23395d; border-radius: 7px; color: #23395d !important; background: #fff; font-size: 12px; font-weight: 700; white-space: nowrap; text-decoration: none !important; }
+.report-nav .report-nav-repo:hover { background: #23395d; color: #fff !important; }
+.report-nav a:focus-visible { outline: 3px solid #3a7d78; outline-offset: 3px; }
+@media (max-width: 1150px) { .report-nav-inner { gap: 10px; } .report-nav-links a { padding: 9px 8px; } }
+@media (max-width: 700px) { .report-nav { margin-left: -12px; margin-right: -12px; padding: 10px 12px; margin-bottom: 16px; } .report-nav-brand { font-size: 14px; } .report-nav-brand span { font-size: 8px; letter-spacing: 1px; } .report-nav-links a { padding: 8px; } .report-nav .report-nav-repo { padding: 8px; font-size: 11px; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .report-nav-links a { transition: none; } }
+@media print { .report-nav { display: none; } }
+</style>
+</head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+<div id="report-top"></div>
+<nav class="report-nav" aria-label="Report sections">
+  <div class="report-nav-inner">
+    <a class="report-nav-brand" href="#report-top" aria-label="SOSC 314 report, back to top">SOSC 314<span>PROJECT REPORT</span></a>
+    <div class="report-nav-links">
+      <a href="#Research-Question-and-Motivation" aria-current="location">Overview</a>
+      <a href="#Data">Data</a>
+      <a href="#Vocabulary-and-Topic-Analysis">Vocabulary &amp; Topics</a>
+      <a href="#LDA-Topic-Model-Diagnostics-and-Robustness">Topic Diagnostics</a>
+      <a href="#Attitude-Analysis">Attitude Analysis</a>
+      <a href="#Diagnostics-and-robustness">Attitude Diagnostics</a>
+      <a href="#Substantive-Takeaway">Conclusion</a>
+      <a href="#References">References</a>
+    </div>
+    <a class="report-nav-repo" href="https://github.com/wrz-r/SOSC314_Rachel-Wang_Jingwen-Zhai_Congxi-Guan" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository (opens in a new tab)">GitHub ↗</a>
+  </div>
+</nav>
 <main>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=rachel-01">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7959,7 +8012,8 @@ img{display:block;max-width:min(100%,900px)!important;max-height:680px!important
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
-<h2 id="Methods-Topic-Modeling">Methods-Topic Modeling<a class="anchor-link" href="#Methods-Topic-Modeling">¶</a></h2><h3 id="Fightin'-Words">Fightin' Words<a class="anchor-link" href="#Fightin'-Words">¶</a></h3><p>We first used <strong>Fightin' Words</strong>, a weighted log-odds method, to identify vocabulary that is more characteristic of official-media articles or Weibo posts. This initial comparison identifies which words stand out in each corpus and provides a first indication of differences in emphasis.</p>
+<h2 id="Vocabulary-and-Topic-Analysis">Vocabulary and Topic Analysis<a class="anchor-link" href="#Vocabulary-and-Topic-Analysis">¶</a></h2>
+<h3 id="Fightin'-Words">Fightin' Words<a class="anchor-link" href="#Fightin'-Words">¶</a></h3><p>We first used <strong>Fightin' Words</strong>, a weighted log-odds method, to identify vocabulary that is more characteristic of official-media articles or Weibo posts. This initial comparison identifies which words stand out in each corpus and provides a first indication of differences in emphasis.</p>
 <h3 id="LDA-Topic-Modeling">LDA Topic Modeling<a class="anchor-link" href="#LDA-Topic-Modeling">¶</a></h3><p>We then applied <strong>Latent Dirichlet Allocation (LDA)</strong>, an unsupervised machine learning method that identifies topics from patterns of words appearing together. We fitted <strong>separate models</strong> to the official-media and Weibo corpora, then examined their topics, average prevalence, and yearly changes.</p>
 <p><strong>LDA setup and model selection</strong></p>
 <ul>
@@ -7979,7 +8033,7 @@ img{display:block;max-width:min(100%,900px)!important;max-height:680px!important
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Results">Results<a class="anchor-link" href="#Results">¶</a></h2><h3 id="Fightin'-Words:-Distinctive-Vocabulary">Fightin' Words: Distinctive Vocabulary<a class="anchor-link" href="#Fightin'-Words:-Distinctive-Vocabulary">¶</a></h3><p>The strongest official-media terms included <em>marriage registration</em> (z = +58.8), <em>bride price</em> (+45.0), <em>application processing</em> (+35.1), and <em>services</em> (+35.1). These terms point to a focus on administrative procedures, legal issues, and public services.</p>
+<h3 class="report-section-divider" id="Results">Results: Vocabulary and Topics<a class="anchor-link" href="#Results">¶</a></h3><h4 id="Fightin'-Words:-Distinctive-Vocabulary">Fightin' Words: Distinctive Vocabulary<a class="anchor-link" href="#Fightin'-Words:-Distinctive-Vocabulary">¶</a></h4><p>The strongest official-media terms included <em>marriage registration</em> (z = +58.8), <em>bride price</em> (+45.0), <em>application processing</em> (+35.1), and <em>services</em> (+35.1). These terms point to a focus on administrative procedures, legal issues, and public services.</p>
 <p>Weibo-distinctive terms included <em>getting married</em> (z = −44.6), <em>liking</em> (−40.7), <em>children</em> (−37.0), and <em>pressure to marry</em> (−35.3).</p>
 </div>
 </div>
@@ -8004,7 +8058,7 @@ img{display:block;max-width:min(100%,900px)!important;max-height:680px!important
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Fightin' Words offers initial evidence of different emphases, but the Weibo results contain broad conversational words such as <em>liking</em> and <em>feelings</em>, which do not identify clear marriage-related topics on their own. We therefore used LDA to examine the broader themes.</p>
-<h3 id="LDA-Topics">LDA Topics<a class="anchor-link" href="#LDA-Topics">¶</a></h3><p><strong>Table 1. Official-media topics (K = 12)</strong></p>
+<h4 id="LDA-Topics">LDA Topics<a class="anchor-link" href="#LDA-Topics">¶</a></h4><p><strong>Table 1. Official-media topics (K = 12)</strong></p>
 </div>
 </div>
 </div>
@@ -8214,7 +8268,7 @@ img{display:block;max-width:min(100%,900px)!important;max-height:680px!important
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Topic-Prevalence">Topic Prevalence<a class="anchor-link" href="#Topic-Prevalence">¶</a></h3><p>The most prevalent topics in official media were <strong>Marriage registration (17.7%)</strong> and <strong>Wedding reform (15.8%)</strong>, followed by <em>Marriage choices (10.5%)</em> and <em>Rural bride-price reform (9.7%)</em>. Together, these topics suggest that official media gave considerable attention to marriage registration services and efforts to change wedding customs.</p>
+<h4 id="Topic-Prevalence">Topic Prevalence<a class="anchor-link" href="#Topic-Prevalence">¶</a></h4><p>The most prevalent topics in official media were <strong>Marriage registration (17.7%)</strong> and <strong>Wedding reform (15.8%)</strong>, followed by <em>Marriage choices (10.5%)</em> and <em>Rural bride-price reform (9.7%)</em>. Together, these topics suggest that official media gave considerable attention to marriage registration services and efforts to change wedding customs.</p>
 <p>On Weibo, the largest themes were <strong>Children and family (13.4%)</strong>, <strong>Marriage choices (11.4%)</strong>, and <strong>Marriage hopes (10.9%)</strong>, alongside <em>Dating feelings (8.3%)</em> and <em>Relationship feelings (8.3%)</em>. Family responsibilities, personal decisions, and expectations about relationships were recurring parts of online discussion.</p>
 </div>
 </div>
@@ -8239,7 +8293,7 @@ img{display:block;max-width:min(100%,900px)!important;max-height:680px!important
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>The topic distributions show <strong>two different ways of discussing marriage</strong>. Official-media articles give more attention to how marriage is managed and how wedding customs can be changed. Weibo discussions focus more on family life, the decision to marry, and expectations about relationships. This suggests that official media often presents marriage as a matter of public policy and social practices, while users more often discuss its place in their personal and family lives.</p>
-<h3 id="Shared-Issues:-Bride-Price-and-Divorce">Shared Issues: Bride Price and Divorce<a class="anchor-link" href="#Shared-Issues:-Bride-Price-and-Divorce">¶</a></h3><p>Interestingly, <strong>bride price and divorce</strong> appeared as topics in both corpora. This indicates that they are recurring concerns in both official media and Weibo discussions. To understand how the two sources approach the same issue, we compared the <strong>weights of selected words within the corresponding LDA topics</strong>.</p>
+<h4 id="Shared-Issues:-Bride-Price-and-Divorce">Shared Issues: Bride Price and Divorce<a class="anchor-link" href="#Shared-Issues:-Bride-Price-and-Divorce">¶</a></h4><p>Interestingly, <strong>bride price and divorce</strong> appeared as topics in both corpora. This indicates that they are recurring concerns in both official media and Weibo discussions. To understand how the two sources approach the same issue, we compared the <strong>weights of selected words within the corresponding LDA topics</strong>.</p>
 <p><strong>Bride price</strong> (money or gifts given by a groom’s family to a bride’s family) appeared in both corpora. Official media emphasized <em>return</em> (3.34%, versus &lt;0.01% on Weibo), alongside payment and court terms, suggesting a focus on disputes and their resolution. Weibo emphasized <em>men</em> (6.07%) and <em>women</em> (4.60%), each below 0.01% in the selected official-media topic, suggesting a focus on gender expectations around marriage.</p>
 </div>
 </div>
@@ -8286,7 +8340,7 @@ img{display:block;max-width:min(100%,900px)!important;max-height:680px!important
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Topic-Trends,-2021%E2%80%932025">Topic Trends, 2021–2025<a class="anchor-link" href="#Topic-Trends,-2021%E2%80%932025">¶</a></h3><p>The clearest change in official media was a shift <strong>from discussing young people's marriage choices toward reforms of wedding customs</strong>. Among the topics shown in Figure 5:</p>
+<h4 id="Topic-Trends,-2021%E2%80%932025">Topic Trends, 2021–2025<a class="anchor-link" href="#Topic-Trends,-2021%E2%80%932025">¶</a></h4><p>The clearest change in official media was a shift <strong>from discussing young people's marriage choices toward reforms of wedding customs</strong>. Among the topics shown in Figure 6:</p>
 <ul>
 <li><strong>Marriage choices</strong> decreased from <strong>18.3% (2021)</strong> to <strong>4.2% (2025)</strong>.</li>
 <li><strong>Wedding reform</strong> increased from <strong>7.9%</strong> to <strong>19.4%</strong>.</li>
@@ -8339,7 +8393,7 @@ img{display:block;max-width:min(100%,900px)!important;max-height:680px!important
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="LDA-Topic-Model-Diagnostics-and-Robustness">LDA Topic Model Diagnostics and Robustness<a class="anchor-link" href="#LDA-Topic-Model-Diagnostics-and-Robustness">¶</a></h2><p>To check how reliable the <strong>LDA topic results</strong> were, we examined topic coherence and exclusivity, random-seed stability, and sensitivity to the number of topics (K).</p>
+<h3 class="report-section-divider" id="LDA-Topic-Model-Diagnostics-and-Robustness">LDA Topic Model Diagnostics and Robustness<a class="anchor-link" href="#LDA-Topic-Model-Diagnostics-and-Robustness">¶</a></h3><p>To check how reliable the <strong>LDA topic results</strong> were, we examined topic coherence and exclusivity, random-seed stability, and sensitivity to the number of topics (K).</p>
 <table>
 <thead>
 <tr>
@@ -8366,7 +8420,7 @@ img{display:block;max-width:min(100%,900px)!important;max-height:680px!important
 </tr>
 </tbody>
 </table>
-<h3 id="Coherence-and-Exclusivity">Coherence and Exclusivity<a class="anchor-link" href="#Coherence-and-Exclusivity">¶</a></h3>
+<h4 id="Coherence-and-Exclusivity">Coherence and Exclusivity<a class="anchor-link" href="#Coherence-and-Exclusivity">¶</a></h4>
 </div>
 </div>
 </div>
@@ -8389,7 +8443,7 @@ img{display:block;max-width:min(100%,900px)!important;max-height:680px!important
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Random-Seed-Stability">Random-Seed Stability<a class="anchor-link" href="#Random-Seed-Stability">¶</a></h3><p>Topic similarity was generally higher for the official-media models than for the Weibo models, suggesting that the Weibo topic solution is more sensitive to initialization.</p>
+<h4 id="Random-Seed-Stability">Random-Seed Stability<a class="anchor-link" href="#Random-Seed-Stability">¶</a></h4><p>Topic similarity was generally higher for the official-media models than for the Weibo models, suggesting that the Weibo topic solution is more sensitive to initialization.</p>
 </div>
 </div>
 </div>
@@ -8412,7 +8466,7 @@ img{display:block;max-width:min(100%,900px)!important;max-height:680px!important
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Sensitivity-to-the-Number-of-Topics">Sensitivity to the Number of Topics<a class="anchor-link" href="#Sensitivity-to-the-Number-of-Topics">¶</a></h3><p>We also compared LDA results using different numbers of topics. The broader themes were still recognizable, but some specific topics were split into smaller ones or combined with other topics as K changed. We chose <strong>K = 12</strong> because it provided a useful balance of clear topics and manageable detail.</p>
+<h4 id="Sensitivity-to-the-Number-of-Topics">Sensitivity to the Number of Topics<a class="anchor-link" href="#Sensitivity-to-the-Number-of-Topics">¶</a></h4>
 </div>
 </div>
 </div>
@@ -8423,7 +8477,7 @@ img{display:block;max-width:min(100%,900px)!important;max-height:680px!important
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Additional-Topic-Alignment-Diagnostic">Topic-Alignment Diagnostic<a class="anchor-link" href="#Additional-Topic-Alignment-Diagnostic">¶</a></h3>
+
 <p>To compare alternative <em></em>K values with the <strong></strong><em></em>K = 12 baseline, Hungarian matching (<a href="https://doi.org/10.1137/0105003">Munkres, 1957</a>) pairs topics by maximum cosine similarity of their word-weight vectors. Cosine similarity, top-word Jaccard overlap, and yearly-prevalence Spearman correlation then measure content and trend stability without confusing topic-label switching with model change. Figure 10 reports this comparison.</p>
 </div>
 </div>
@@ -8458,10 +8512,10 @@ img{display:block;max-width:min(100%,900px)!important;max-height:680px!important
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Interpretation-and-Substantive-Takeaways">Interpretation and Substantive Takeaways<a class="anchor-link" href="#Interpretation-and-Substantive-Takeaways">¶</a></h2><p>The main finding is that <strong>official media and Weibo users place different priorities on marriage-related issues</strong>. Official-media articles devote more attention to marriage registration, legal processes, and reforms of wedding customs. Weibo users more often discuss family responsibilities, relationships, pressure from others, and the personal decision to marry. This difference matters because it shows which aspects of marriage become visible in official-media articles and which concerns are more prominent in everyday online conversations.</p>
+<h3 class="report-section-divider" id="Interpretation-and-Substantive-Takeaways">Topic Findings and Interpretation<a class="anchor-link" href="#Interpretation-and-Substantive-Takeaways">¶</a></h3><p>The main finding is that <strong>official media and Weibo users place different priorities on marriage-related issues</strong>. Official-media articles devote more attention to marriage registration, legal processes, and reforms of wedding customs. Weibo users more often discuss family responsibilities, relationships, pressure from others, and the personal decision to marry. This difference matters because it shows which aspects of marriage become visible in official-media articles and which concerns are more prominent in everyday online conversations.</p>
 <p>The comparisons of <strong>bride price and divorce</strong> add a further insight. Even when both sources discuss the same issue, they may describe the problem differently. For example, discussions focused on courts or the return of bride-price payments points toward <strong>legal rules and institutional solutions</strong>. Discussions focused on gender expectations, divorce waiting periods, or domestic violence raise questions about <strong>fairness, personal choices, and lived experiences</strong>.</p>
 <p>The trends also suggest that the relationship between these discussions is <strong>not fixed over time</strong>. Official-media attention shifted toward wedding and bride-price reform, while the main themes on Weibo changed relatively little. Together, these results point to a <strong>possible gap between institutional priorities and concerns expressed in everyday discussion</strong>. Understanding that gap can help researchers ask whether public communication addresses the aspects of marriage that people find most relevant. Our analysis identifies the difference in emphasis; it cannot determine whether official media is responding to, or overlooking, specific public concerns.</p>
-<h2 id="Limitations-and-Future-Work">Limitations and Future Work<a class="anchor-link" href="#Limitations-and-Future-Work">¶</a></h2><ul>
+<h3 class="report-section-divider" id="Limitations-and-Future-Work">Topic Analysis: Limitations and Future Work<a class="anchor-link" href="#Limitations-and-Future-Work">¶</a></h3><ul>
 <li><strong>Corpus differences:</strong> Official articles and short social-media posts differ in length and writing style, which can affect word and topic distributions.</li>
 <li><strong>Topic uncertainty:</strong> Some topics are broad or overlapping, especially on Weibo. Topic labels involve researcher judgment, and the results vary somewhat with random seeds and K.</li>
 <li><strong>Future work:</strong> Reading representative posts and articles, or comparing discussions around specific events, could help test how shared issues are framed and whether official media responds to public concerns.</li>
@@ -8477,7 +8531,8 @@ img{display:block;max-width:min(100%,900px)!important;max-height:680px!important
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
-<h2 id="Methods-Attitude-Analysis">Methods-Attitude Analysis<a class="anchor-link" href="#Methods-Attitude-Analysis">¶</a></h2><p>Topic modeling tells us what official media and users are talking about, but it does not tell us whether marriage is being represented positively, negatively, or neutrally. We therefore introduce attitude analysis to help us evaluate the sentiment towards marriage.</p>
+<h2 id="Attitude-Analysis">Attitude Analysis<a class="anchor-link" href="#Attitude-Analysis">¶</a></h2>
+<p>Topic modeling tells us what official media and users are talking about, but it does not tell us whether marriage is being represented positively, negatively, or neutrally. We therefore introduce attitude analysis to help us evaluate the sentiment towards marriage.</p>
 <p>We compare <strong>Semantic Scaling</strong> with a supervised <strong>Transformer classifier</strong>.</p>
 </div>
 </div>
@@ -8527,7 +8582,7 @@ It also achieved <strong>82.6% validation accuracy</strong>. Across 3,935 docume
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Evaluation-and-results">Evaluation and results<a class="anchor-link" href="#Evaluation-and-results">¶</a></h2><p>The results show a clear difference in marriage attitudes between official media and user-initiated posts. Overall, official media posts are more positive toward marriage than user posts.</p>
+<h3 class="report-section-divider" id="Evaluation-and-results">Results: Attitudes Toward Marriage<a class="anchor-link" href="#Evaluation-and-results">¶</a></h3><p>The results show a clear difference in marriage attitudes between official media and user-initiated posts. Overall, official media posts are more positive toward marriage than user posts.</p>
 <table>
 <thead>
 <tr>
@@ -8627,7 +8682,7 @@ It also achieved <strong>82.6% validation accuracy</strong>. Across 3,935 docume
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Overall, these results indicate a persistent divergence between institutional and user-initiated marriage discourse. <strong>Official media tend to frame marriage more positively and show greater variation across time, whereas user attitudes remain relatively stable and mildly positive.</strong> The divergence becomes particularly pronounced in 2025.</p>
+<p>Overall, these results indicate a persistent divergence between institutional and user-initiated marriage discourse. <strong>Official media tend to frame marriage more positively and show greater variation across time, whereas user attitudes remain relatively stable and close to or below zero.</strong> The divergence becomes particularly pronounced in 2025.</p>
 </div>
 </div>
 </div>
@@ -8638,7 +8693,7 @@ It also achieved <strong>82.6% validation accuracy</strong>. Across 3,935 docume
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Diagnostics-and-robustness">Diagnostics and robustness<a class="anchor-link" href="#Diagnostics-and-robustness">¶</a></h2><h3 id="Sensitivity-Analysis">Sensitivity Analysis<a class="anchor-link" href="#Sensitivity-Analysis">¶</a></h3><p>A sensitivity analysis compared <strong>five preprocessing specifications</strong>: baseline cleaning, raw text, retaining hashtags, and maximum sequence lengths of 128 and 256 tokens. The consistency of the results indicates that the substantive finding is robust to reasonable preprocessing choices, rather than being an artifact of a particular text-cleaning or truncation procedure.</p>
+<h3 class="report-section-divider" id="Diagnostics-and-robustness">Attitude Diagnostics and Robustness<a class="anchor-link" href="#Diagnostics-and-robustness">¶</a></h3><h4 id="Sensitivity-Analysis">Sensitivity Analysis<a class="anchor-link" href="#Sensitivity-Analysis">¶</a></h4><p>A sensitivity analysis compared <strong>five preprocessing specifications</strong>: baseline cleaning, raw text, retaining hashtags, and maximum sequence lengths of 128 and 256 tokens. The consistency of the results indicates that the substantive finding is robust to reasonable preprocessing choices, rather than being an artifact of a particular text-cleaning or truncation procedure.</p>
 </div>
 </div>
 </div>
@@ -8661,7 +8716,7 @@ It also achieved <strong>82.6% validation accuracy</strong>. Across 3,935 docume
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Seed-Stability">Seed Stability<a class="anchor-link" href="#Seed-Stability">¶</a></h3><p>Two better-performing random-seed runs, with validation macro-F1 scores of 0.725 and 0.692, produced positive gaps, while three weaker runs produced negative or near-zero gaps. This indicates that model performance is sensitive to random initialization given the small labelled sample, and that the substantive gap is conditional on adequate model performance.</p>
+<h4 id="Seed-Stability">Seed Stability<a class="anchor-link" href="#Seed-Stability">¶</a></h4><p>Two better-performing random-seed runs, with validation macro-F1 scores of 0.725 and 0.692, produced positive gaps, while three weaker runs produced negative or near-zero gaps. This indicates that model performance is sensitive to random initialization given the small labelled sample, and that the substantive gap is conditional on adequate model performance.</p>
 </div>
 </div>
 </div>
@@ -8684,6 +8739,7 @@ It also achieved <strong>82.6% validation accuracy</strong>. Across 3,935 docume
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Human-Audit">Human Audit<a class="anchor-link" href="#Human-Audit">¶</a></h4>
 <p>A manual audit of 40 Weibo posts found 90% human-model agreement among high-confidence cases and 50% among low-confidence cases. The model misclassified 11 of 12 human-labelled negative posts as neutral or positive. This suggests that it under-detects negative attitudes, especially in ironic or self-deprecating expressions.</p>
 </div>
 </div>
@@ -8707,7 +8763,7 @@ It also achieved <strong>82.6% validation accuracy</strong>. Across 3,935 docume
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Semantic-Scaling-Internal-Setting-Robustness">Semantic Scaling Robustness<a class="anchor-link" href="#Semantic-Scaling-Internal-Setting-Robustness">¶</a></h3>
+<h4 id="Semantic-Scaling-Internal-Setting-Robustness">Semantic Scaling Robustness<a class="anchor-link" href="#Semantic-Scaling-Internal-Setting-Robustness">¶</a></h4>
 <p>Holding <code></code>BAAI/bge-small-zh-v1.5 fixed (<a href="https://arxiv.org/abs/2309.07597">Xiao et al., 2023</a>), we vary: (1) one positive–negative anchor pair at a time (<a href="https://doi.org/10.1007/978-1-4899-4541-9">Efron &amp; Tibshirani, 1993</a>), (2) <code></code>MIN_FREQ = 2, 3, or 5, and (3) mean, median, or trimmed-mean aggregation. Alternatives are compared with the baseline using document-score and yearly-profile Spearman correlations plus the signs of the official-media mean and Official–Weibo gap.</p>
 </div>
 </div>
@@ -8745,7 +8801,7 @@ It also achieved <strong>82.6% validation accuracy</strong>. Across 3,935 docume
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Interpretation-and-limitations">Interpretation and limitations<a class="anchor-link" href="#Interpretation-and-limitations">¶</a></h2><p>The results suggest that official media portray marriage more positively than user-initiated posts, with a difference that persists throughout 2021–2025.</p>
+<h3 class="report-section-divider" id="Interpretation-and-limitations">Attitude Findings and Limitations<a class="anchor-link" href="#Interpretation-and-limitations">¶</a></h3><p>The results suggest that official media portray marriage more positively than user-initiated posts, with a difference that persists throughout 2021–2025.</p>
 <p>Measurement remains the main limitation. The <strong>initial labelled sample is small, negative Weibo posts are difficult to classify</strong> due to the language. The result shown before is the re-trained model after the 40-post-manual audit, but bias still exists.</p>
 <p>Next steps should expand the labelled dataset, include more negative examples, and report cross-validation plus class-specific precision, recall, and macro-F1. A larger manual audit stratified by source and predicted category would help locate systematic errors.</p>
 </div>
@@ -8758,9 +8814,9 @@ It also achieved <strong>82.6% validation accuracy</strong>. Across 3,935 docume
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Substantive-Takeaway"> Takeaway<a class="anchor-link" href="#Substantive-Takeaway">¶</a></h3>
+<h2 id="Substantive-Takeaway">Conclusion<a class="anchor-link" href="#Substantive-Takeaway">¶</a></h2>
 <p>The strongest conclusion is aggregate: official media emphasize institutional and policy concerns and portray marriage more positively, while Weibo foregrounds personal pressure and lived experience. The results do not show causal media effects or population attitudes.</p>
-<h3 id="Limitations-and-Future-Work">Limitation and Next Step<a class="anchor-link" href="#Limitations-and-Future-Work">¶</a></h3>
+<h3 id="Overall-Limitations-and-Next-Steps">Overall Limitations and Next Steps<a class="anchor-link" href="#Overall-Limitations-and-Next-Steps">¶</a></h3>
 <p>Individual topics, annual attitude profiles, and the exact cross-corpus gap are less stable than the overall direction. Future work should expand stratified human labels—especially ironic, implicit, and negative posts—and add event-matched qualitative validation.</p>
 </div>
 </div>
@@ -8801,5 +8857,37 @@ It also achieved <strong>82.6% validation accuracy</strong>. Across 3,935 docume
 </div>
 </div>
 </main>
+
+<script id="report-navigation-script">
+(() => {
+  const nav = document.querySelector('.report-nav');
+  const links = [...nav.querySelectorAll('.report-nav-links a')];
+  const sections = links.map(link => document.getElementById(link.hash.slice(1)));
+  let scheduled = false;
+  function update() {
+    const offset = nav.getBoundingClientRect().height + 28;
+    let active = 0;
+    sections.forEach((section, index) => {
+      if (section && section.getBoundingClientRect().top <= offset) active = index;
+    });
+    links.forEach((link, index) => {
+      if (index === active) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+    scheduled = false;
+  }
+  function measure() {
+    document.documentElement.style.setProperty('--report-nav-height', `${nav.getBoundingClientRect().height}px`);
+    update();
+  }
+  window.addEventListener('scroll', () => {
+    if (!scheduled) { scheduled = true; requestAnimationFrame(update); }
+  }, { passive: true });
+  window.addEventListener('resize', measure);
+  window.addEventListener('load', measure);
+  if ('ResizeObserver' in window) new ResizeObserver(measure).observe(nav);
+  measure();
+})();
+</script>
 </body>
 </html>
